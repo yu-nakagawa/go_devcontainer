@@ -1,5 +1,13 @@
 version: '3'
 services:
+  db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: gorm
+      POSTGRES_PASSWORD: gorm
+      POSTGRES_DB: gorm
+    ports:
+      - 5432:5432
   app:
     build: .
     tty: true
@@ -7,3 +15,5 @@ services:
     command: /bin/bash
     volumes:
       - .:/go/src/work
+    depends_on:
+      - db

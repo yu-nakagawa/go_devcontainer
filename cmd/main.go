@@ -1,13 +1,17 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/davecgh/go-spew/spew"
+	"github.com/gin-gonic/gin"
+	"github.com/yu-nakagawa/go_devcontainer/db"
 )
 
 func main() {
-	fmt.Println("Hellow, Go!!")
-	debug_str := "Hellow, Module!!"
-	spew.Dump(debug_str)
+	r := gin.Default()
+	r.GET("/", func(c *gin.Context) {
+		c.String(200, "Hello, Wod")
+
+	})
+	db.Init()
+	r.Run()
+	db.Close()
 }

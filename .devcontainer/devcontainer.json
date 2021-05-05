@@ -13,7 +13,8 @@
     "editor.formatOnSave": false,
     "[go]": {
       "editor.formatOnSave": true
-    }
+    },
+    "go.languageServerExperimentalFeatures.hover": false
   },
   "extensions": [
     "doggy8088.go-extension-pack",
